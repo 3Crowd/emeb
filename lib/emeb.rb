@@ -1,4 +1,4 @@
-%w(version routing_engine queue exchange binding convenience_interface).each do |emeb_library|
+%w(version broker queue exchange binding convenience_interface).each do |emeb_library|
   require "emeb/#{emeb_library}"
 end
 
