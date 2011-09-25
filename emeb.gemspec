@@ -25,5 +25,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 2.6'
   gem.add_development_dependency 'yard', '~> 0.7'
   gem.add_development_dependency 'rdiscount', '~> 1.6.8'
-
+  
+  gem.add_dependency 'eventmachine', '~> 0.12.10'
+  gem.add_dependency 'activesupport', '~> 3.1.0'
 end
