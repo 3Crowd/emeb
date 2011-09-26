@@ -20,10 +20,12 @@ module EMEB
       @enabled
     end
     
+    # Makes the binding a potential target for exchange subscribed messages
     def enable!
       @enabled = true
     end
     
+    # Disallows the binding as a target for exchange subscribed messages
     def disable!
       @enabled = false
     end

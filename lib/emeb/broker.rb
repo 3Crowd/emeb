@@ -1,8 +1,7 @@
 module EMEB
   
-  # The Broker routes messages from exchanges to queues via bindings. It
-  # is responsible for pulling messages from exchanges, determining if a message
-  # should be routed to a queue via any bindings the exchange possesses
+  # The Broker encapsulates a collection of VirtualHosts and provides convenience
+  # methods for interacting with the set of VirtualHosts
   class Broker
   end
   

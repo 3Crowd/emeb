@@ -1,4 +1,4 @@
-%w(version broker queue exchange binding convenience_interface).each do |emeb_library|
+%w(version broker virtual_host queue exchange binding convenience_interface).each do |emeb_library|
   require "emeb/#{emeb_library}"
 end
 
