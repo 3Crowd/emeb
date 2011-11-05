@@ -18,7 +18,7 @@ module EMEB
     end
     
     # Informs VirtualHost instance that it should manage the given exchange
-    # @param exchange_to_be_declared [Exchange, #virtual_host, #name] The exchange to manage
+    # @param exchange_to_be_declared [Exchange, #virtual_host, #name, #bindings] The exchange to manage
     # @raise [DuplicateExchangeNameError] Raised if the name of the exchange to be declared
     #   matches the name of an already declared exchange
     # @raise [ExchangeVirtualHostNotSelfError] Raised if the #virtual_host return value
@@ -45,6 +45,12 @@ module EMEB
       raise ExchangeVirtualHostNotSelfError if exchange_to_be_declared.virtual_host != self
     end
     private :ensure_exchange_virtual_host_matches_self
+    
+    # All available Bindings via declared Exchanges
+    # @return [Binding] The set of available Bindings
+    def bindings
+      exchanges.map{|exchange| exchange.bindings}
+    end
     
     # Raised when the name of the exchange to be declared matches the name of a
     # previously declared exchange. See (VirtualHost#declare_exchange).

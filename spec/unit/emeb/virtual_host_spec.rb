@@ -22,10 +22,18 @@ describe EMEB::VirtualHost do
   
   context 'declaring an exchange' do
     
+    before :each do
+      @exchange = double('Exchange', :name => 'test_exchange', :virtual_host => @virtual_host, :bindings => [double('Exchange Binding')])
+    end
+    
     it 'adds declared exchanges to the set of known exchanges' do
-      exchange = double('Exchange', :name => 'test_exchange', :virtual_host => @virtual_host)
-      @virtual_host.declare_exchange(exchange)
-      @virtual_host.exchanges.should include(exchange)
+      @virtual_host.declare_exchange(@exchange)
+      @virtual_host.exchanges.should include(@exchange)
+    end
+    
+    it 'has knowledge of many bindings, through declared exchanges' do
+      @virtual_host.declare_exchange(@exchange)
+      @virtual_host.bindings.should include(@exchange.bindings)
     end
     
     context 'while attempting to declare an exchange with a name equal to a previously declared exchange' do
