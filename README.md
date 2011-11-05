@@ -47,3 +47,8 @@ Will yield the following output:
 	$> ruby example.rb
 	A most enjoyable experience: event occurance
 	$>
+
+Travis CI
+---------
+[![Travis-CI](https://secure.travis-ci.org/3Crowd/emeb.png?branch=develop)](http://travis-ci.org/3Crowd/emeb)
+
